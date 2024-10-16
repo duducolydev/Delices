@@ -1,0 +1,25 @@
+{# AFFICHER UN MESSAGE D'ALERTE #}
+{% for message in app.flashes('success') %}
+	<div class="alert alert-success mt-4">
+		{{ message }}
+	</div>
+{% endfor %}
+<p>
+	Une nouvelle demande de contact a été reçue !
+</p>
+
+<ul>
+	<li>
+		Nom :
+		{{ data.name }}
+	</li>
+	<li>
+		Email :
+		{{ data.email }}
+	</li>
+</ul>
+
+<p>
+	<strong>
+		Message :</strong>
+</p></br>{{ data.message | nl2br }}</p>
