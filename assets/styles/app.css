@@ -1,0 +1,26 @@
+body {
+    background-color: azure;
+}
+
+.nav-link {
+    color: azure;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: rgb(0, 0, 114);
+}
+
+.nav-link.active {
+    color: rgb(0, 0, 80);
+}
+
+.action {
+    border: 2px solid inherit;
+    background-color: azure;
+    color: black;
+}
+
+.action:hover {
+    color: azure;
+}

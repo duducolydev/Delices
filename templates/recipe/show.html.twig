@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Recette : " ~ slug %}
+
+{% block body %}
+	<div class="container">
+		<h1>
+			{{ recipe.title }}
+		</h1>
+		<span class="badge bg-primary">
+			Créée le
+			{{ recipe.createdAt | date("d/m/Y à H:i") }}
+		</span>
+		</br>
+		</br>
+		<h4> Description : </h4>
+		<p>
+			{{ recipe.content | nl2br }}
+		</p>
+		<p class="mt-4">
+			<strong>
+				Durée :
+			</strong>
+			{{ recipe.duration }} minutes
+		</p>
+	</div>
+{% endblock %}
