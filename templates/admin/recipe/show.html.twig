@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin.html.twig' %}
 
 {% block title "Recette : " ~ slug %}
 
@@ -7,6 +7,9 @@
 		<h1>
 			{{ recipe.title }}
 		</h1>
+			<p>
+				<img src="/images/recipes/{{recipe.thumbnail}}" >
+			</p>
 		<span class="badge bg-primary">
 			Créée le
 			{{ recipe.createdAt | date("d/m/Y à H:i") }}

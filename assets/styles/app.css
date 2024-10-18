@@ -24,3 +24,21 @@ body {
 .action:hover {
     color: azure;
 }
+
+.connexion, .inscription {
+    margin: auto;
+    color: black;
+    border: 2px solid inherit;
+    background-color: azure;
+}
+
+.connexion:hover, .inscription:hover {
+    color: white;
+    border: 2px solid inherit;
+}
+
+img {
+    border: 2px solid blue;
+    border-radius: 5px;
+    width: 300px;
+}
