@@ -6,12 +6,14 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/admin/category', name: 'admin.category.')]
+#[IsGranted('ROLE_USER')]
 class CategoryController extends AbstractController
 {
 
@@ -19,7 +21,7 @@ class CategoryController extends AbstractController
     public function index(CategoryRepository $categoryRepository) 
     {
         return $this->render('admin/category/index.html.twig', [
-            'categories' => $categoryRepository->findAll()
+            'categories' => $categoryRepository->findAllWithCount()
         ]);
     }
 
